@@ -9,7 +9,7 @@ public class TTT {
 
     public void initializeBoard(){}
 
-    public boolean isBoardFull{}
+    public boolean isBoardFull(){}
 
     public boolean checkForWin(){}
 
