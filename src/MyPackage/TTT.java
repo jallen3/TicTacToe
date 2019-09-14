@@ -7,7 +7,15 @@ public class TTT {
 
     public TTT(){}
 
-    public void initializeBoard(){}
+    //set/reset the board back to all empty values
+    public void initializeBoard(){
+        //Loop through rows
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                board[i][j] = '-';
+            }
+        }
+    }
 
     public boolean isBoardFull(){}
 
