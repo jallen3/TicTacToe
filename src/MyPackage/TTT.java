@@ -79,6 +79,34 @@ public class TTT
         return(c1 != '-' && c1 == c2 && c2 == c3);
     }
 
+    public void changePlayer()
+    {
+        if(currentPlayerMark == 'x')
+        {
+            currentPlayerMark = 'o';
+        }
+        else
+        {
+            currentPlayerMark = 'x';
+        }
+    }
 
+    public boolean placeMark(int row, int col)
+    {
+        if((row >= 0) && (row < 3))
+        {
+            if((col >= 0) && (col < 3))
+            {
+                if(board[row][col] == '-')
+                {
+                    board[row][col] = currentPlayerMark;
+                    return true;
+                }
+
+            }
+        }
+        return true;
+
+    }
 
 }
