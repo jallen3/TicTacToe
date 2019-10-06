@@ -6,7 +6,17 @@ public class TTT
     private char[][] board; //3 x 3 board layout
     private char currentPlayerMark; //holds 'x' or 'o'
 
-    public TTT(){}
+    public TTT()
+    {
+        board = new char[3][3];
+        currentPlayerMark = 'x';
+        initializeBoard();
+    }
+
+    public char getCurrentPlayerMark()
+    {
+        return currentPlayerMark;
+    }
 
     //set/reset the board back to all empty values
     public void initializeBoard()
@@ -40,7 +50,22 @@ public class TTT
         }
     }
 
-    public boolean isBoardFull(){}
+    public boolean isBoardFull()
+    {
+        boolean boardFull = true;
+
+        for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 3; j++)
+            {
+                if(board[i][j] == '-')
+                {
+                    boardFull = false;
+                }
+            }
+        }
+        return boardFull;
+    }
 
     public boolean checkForWin()
     {
@@ -71,12 +96,12 @@ public class TTT
 
     private boolean checkDiagonalsForWin()
     {
-        return(checkRowCol(board[0][0], board[1][1], board[2][2]) == true || checkRowCol(board[0][2], board[1][1], board[2][0]) == true);
+        return((checkRowCol(board[0][0], board[1][1], board[2][2]) == true) || (checkRowCol(board[0][2], board[1][1], board[2][0]) == true));
     }
 
     private boolean checkRowCol(char c1, char c2, char c3)
     {
-        return(c1 != '-' && c1 == c2 && c2 == c3);
+        return((c1 != '-') && (c1 == c2) && (c2 == c3));
     }
 
     public void changePlayer()
@@ -105,7 +130,7 @@ public class TTT
 
             }
         }
-        return true;
+        return false;
 
     }
 

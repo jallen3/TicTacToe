@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Main
 {
 
-    public static void majn(String[] args) {
+    public static void main(String[] args)
+    {
         Scanner myScanner = new Scanner(System.in);
         TTT game = new TTT();
         game.initializeBoard();
